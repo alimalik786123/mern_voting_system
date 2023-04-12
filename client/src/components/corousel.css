@@ -1,0 +1,27 @@
+#carousel{
+    
+    width: 95%;
+    height: 400px;
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px;
+}
+.heightc{
+    max-height: 500px;
+    background-color: aqua;
+}
+.carousel-caption{
+    left: 1%;
+    top: 1%;
+    right: 10%;
+}
+.try{
+    left: 0%;
+    display: flex;
+    top: 0%;
+    bottom: 1%;
+    height: 55%;
+    width: 150%;
+    background-color: rgb(255, 239, 239);
+}

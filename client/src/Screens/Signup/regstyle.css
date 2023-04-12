@@ -1,0 +1,50 @@
+
+.row1{
+    background-color: rgb(252, 252, 252);
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px;
+    display: flex;
+}
+.btn-1{
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color: aliceblue;
+    border-radius: 4px;
+    font-weight: bold;
+
+}
+.btn-1:hover{
+    background-color: aliceblue;
+    color: black;
+    border: 1px solid;
+    border-color: black;
+}
+img{
+    border-top: 30px;
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+   
+}
+.new1 .new2{
+    position: relative;
+   width: 60%;
+}
+.cen2{
+    left: 20px;
+}
+.formreg{ 
+width: 30%;
+}
+/* #fit{
+    max-width: 900px;
+    width: 110%;
+} */
+/* 
+    #fit{
+        width: 90px;
+    }
+  } */

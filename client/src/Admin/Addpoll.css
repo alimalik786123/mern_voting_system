@@ -1,0 +1,35 @@
+.formreg{
+    margin-top: 3%;
+    width: 60%;
+    margin-left: 17%;
+    background-color: burlywood;
+    padding: 20px;
+    border-radius: 10px;
+}
+.txt{
+    height: 40px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: large;
+}
+.slt{
+    height: 40px;
+    border-radius: 5px;
+    font-size: large;
+
+}
+.des{
+    height: 70px;
+    border-radius: 5px;
+    font-size: large;
+
+}
+.slt{
+    height: 40px;
+    border-radius: 5px;
+    font-size: large;
+
+}
+.btn1{
+    width: 25%;
+}

@@ -1,0 +1,13 @@
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #ffa805;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(39, 203, 17, 0.9), rgba(252, 238, 37, 0.9));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(215, 244, 253, 0.9), rgba(255, 255, 255, 0.9));
+    box-shadow: 5px 5px;
+    border-radius: 20px;
+    margin:10px;
+  }

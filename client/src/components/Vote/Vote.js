@@ -19,7 +19,7 @@ const Vote=(props)=>{
                             <a href="#" class="menu__link"><h3>Product</h3></a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Team </h3></a>
+                            <a href="#" class="menu__link"><h3>Tea</h3></a>
                         </li>
                         <li class="menu__item">
                             <a href="#" class="menu__link"><h3>Blog </h3></a>

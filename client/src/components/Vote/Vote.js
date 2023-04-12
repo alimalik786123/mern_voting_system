@@ -1,7 +1,7 @@
 import React from 'react'
-import Card from '../Card'
-
-function Vote() {
+import Votecard from './Votecard'
+const Vote=(props)=>{
+    console.log(props.name);
   return (
     <div>
         <div class="container">
@@ -48,34 +48,17 @@ function Vote() {
         <h1>hello</h1>
     </div>
     <div class="banner2">
-        <h1 className='pollname'>Poll name : CR election</h1>
+        <h1 className='pollname'>Poll name : CR election {props.name}</h1>
         <h3 className='desc'></h3>
     </div>
 <div class="hide1"></div> 
    <div class="container1">
     <div className='row'>
-    <Card
-     name='reuben'
-    />
-    <Card 
-    name='ali'
-    />
-
-    <Card 
-    name='ali'
-    />
-    <Card 
-    name='ali'
-    />
-    <Card 
-    name='ali'
-    />
-    <Card 
-    name='ali'
-    />
-    <Card 
-    name='ali'
-    />
+        <h1>{props.name}</h1>
+    {/* { props.candidates && props.candidates.map((data3)=>{return(<Votecard data3={data3} />)})} */}
+ <Votecard
+ name={props.name}
+ />
 </div>
        
           </div>

@@ -24,6 +24,9 @@ function Votemid() {
     console.log(data1)
     useEffect(()=>{
         Datafood()},[])
+    const handle=()=>{
+        
+    }
   return ( 
 
 
@@ -81,7 +84,7 @@ function Votemid() {
     <div class="container1">
     <div className='row'>
     
-    { data1[0] && data1[0].map((data3)=>{return(<Card name={data3.name} btn={data3._id}/>)})}
+    { data1[0] && data1[0].map((data3)=>{return(<Card data3={data3} btn={data3._id}/>)})}
 
        
           </div>

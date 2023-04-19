@@ -21,8 +21,8 @@ function Login() {
         const resp=await response.json()
         console.log(resp);
         if(resp.success){
-          window.localStorage.setItem("token",resp.token)
-          console.log(window.localStorage.getItem("token"));
+          window.localStorage.setItem("userid",data.roll)
+
            redirect1("/")
         }
         else if(!resp.success){

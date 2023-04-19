@@ -21,6 +21,10 @@ function Signup() {
         const resp=await response.json()
         console.log(resp);
         if(resp.success){
+          window.localStorage.setItem("userid",data.roll)
+          window.localStorage.setItem("class",data.class)
+
+
            redirect("/")
         }
         else if(!resp.success){
@@ -109,11 +113,29 @@ function Signup() {
                 /> */}
                 <select className="form-control my-3 " name="class" id="cars" placeholder='-select-'
                 onChange={setfun}>
-    <option value="TecompsB">Te comps</option>
-    <option value="SEcompsB">Se comps</option>
-    <option value="FEA">FEA</option>
-    <option value="SEecs">seecs</option>
-  </select>
+    <option>-select-</option>
+      
+      <option value="">FEA</option>
+      <option value="feb">FEB</option>
+      <option value="fec">FEC</option>
+      <option value="fee">FEE</option>
+      <option value="secompsa">SEcompsA</option>
+      <option value="secompsb">SEcompsB</option>
+      <option value="seecs">SE-ECS</option>
+      <option value="seaids">SE-AIDS</option>
+      <option value="semech">SE-MECH</option>
+      <option value="tecompsa">TEcompsA</option>
+      <option value="tecompsb">TEcompsB</option>
+      <option value="teecs">TE-ECS</option>
+      <option value="teaids">TE-AIDS</option>
+      <option value="temech">TE-MECH</option>
+      <option value="becompsa">BEcompsA</option>
+      <option value="becompsb">BEcompsB</option>
+      <option value="beecs">BE-ECS</option>
+      <option value="beaids">BE-AIDS</option>
+      <option value="bemech">BE-MECH</option>
+    </select>
+  
 
  
 

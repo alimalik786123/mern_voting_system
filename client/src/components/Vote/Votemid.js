@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Card from '../Card'
 
 function Votemid() {
-    
     const [data1,setdata1]=useState([])
     const Datafood=async()=>{
         let data=await fetch('http://localhost:8080/votedata',{
@@ -21,12 +20,13 @@ function Votemid() {
 
     }
     console.log(data1)
-    console.log(data1)
     useEffect(()=>{
         Datafood()},[])
     const handle=()=>{
         
     }
+    const class1=localStorage.getItem("class")
+    console.log(class1,"hai");
   return ( 
 
 
@@ -80,11 +80,11 @@ function Votemid() {
     </div>
 <div class="hide1"></div> 
     </div>
-    
+     
     <div class="container1">
     <div className='row'>
     
-    { data1[0] && data1[0].map((data3)=>{return(<Card data3={data3} btn={data3._id}/>)})}
+    { data1[0] && data1[0].filter((data2)=>data2.class===class1).map((data3)=>{return(<Card data3={data3} btn={data3._id}/>)})}
 
        
           </div>

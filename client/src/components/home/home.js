@@ -74,7 +74,6 @@ export default function Home() {
                 <div class="opportunities__head">
                     <h2 class="opportunities__title">vote now easily</h2>
                     <p class="opportunities__description">On clicking the below button you can see current ongoing vote for you</p>
-                    <a href="/prev" class="btn btn__hero">Vote now</a>
 
                 </div>
                 <div class="opportunities__body">
@@ -91,16 +90,16 @@ export default function Home() {
                         {/* <img src="assets/img/opportunites/opportunity-2.svg" alt="Icon" class="opportunity__icon"/> */}
                         <h2 class="opportunities__title">vote now easily</h2>
                     <p class="opportunities__description">On clicking the below button you can see current ongoing vote for you</p>
-                    <a href="/prev" class="btn btn__hero">Vote now</a>
+                    <a href="/votemid" class="btn btn__hero">Vote now</a>
                     </div>
                     <div class="opportunity">
                         {/* <img src="assets/img/opportunites/opportunity-3.svg" alt="Icon" class="opportunity__icon"/> */}
-                        <h4 class="opportunity__title">Social Impact Invesment
+                        <h4 class="opportunity__title">All votes
                         </h4>
                         <p class="opportunity__description">
-                            At vero eos et accusamus et iusto odio praesentium atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia
+                           here you can see all the votes which is going on in campus
                         </p>
-                        <a href="#" class="btn btn__hero">İnvest Now</a>
+                        <a href="#" class="btn btn__hero">Explore Now</a>
 
                     </div>
                 </div>

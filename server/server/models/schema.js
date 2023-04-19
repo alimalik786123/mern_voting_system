@@ -19,7 +19,8 @@ const schema= new mongoose.Schema({
     password:{
         type:String,
         required:true
-    }
+    },
+    voted:[String]  
 })
 const User=mongoose.model("user",schema)
 module.exports=mongoose.model("user",schema)

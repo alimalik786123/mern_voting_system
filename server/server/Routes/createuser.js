@@ -48,7 +48,7 @@ body('password').isLength({ min: 5 })], async (req, res) => {
         if (!userdata) {
             return res.status(404).json({ errors: "wrong roll number" })
         }
-
+ 
         else if (req.body.password !== userdata.password) {
             return res.status(400).json({ errors: "wrong password" })
         }
@@ -74,6 +74,18 @@ Router.post("/vote", jsonParser
 
 
             })
+            
+            res.json({ success: true })
+        
+        // console.log(try1);
+    })
+   
+
+    Router.post("/up", jsonParser
+    , async (req, res) => {
+            
+            await Vote.updateOne({"candidates._id":req.body.id},{$inc:{"candidates.$.Count":1}})
+            await User.updateOne({"roll":req.body.user},{$push:{"voted":req.body.voteid}})
             
             res.json({ success: true })
         

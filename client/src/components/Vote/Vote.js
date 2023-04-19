@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'; 
 import Votecard from './Votecard'
 const Vote=(props)=>{
-    console.log(props.name);
+    const redirect=useNavigate()
+    useEffect(()=>{
+        if(!localStorage.getItem("id")){
+            redirect('/')
+        }
+    },[])
+    const recieve=useLocation()
+    console.log(recieve.state);
   return (
     <div>
         <div class="container">
@@ -45,20 +53,19 @@ const Vote=(props)=>{
             </nav>
         
     <div class="banner">
-        <h1>hello</h1>
+        <h1></h1>
     </div>
     <div class="banner2">
-        <h1 className='pollname'>Poll name : CR election {props.name}</h1>
+        <div className="half1 pollname">Poll name : CR election</div>
+        <h1 className='half2 desc1'>Description : this election poll is only for 3rd year student only 3rd year studentsare allowd to vote for the student remember election is your right {recieve.state.Name}</h1>
         <h3 className='desc'></h3>
     </div>
 <div class="hide1"></div> 
    <div class="container1">
     <div className='row'>
         <h1>{props.name}</h1>
-    {/* { props.candidates && props.candidates.map((data3)=>{return(<Votecard data3={data3} />)})} */}
- <Votecard
- name={props.name}
- />
+    {recieve.state.map((data3)=>{return(<Votecard data3={data3} />)})}
+ 
 </div>
        
           </div>

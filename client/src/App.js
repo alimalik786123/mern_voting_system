@@ -20,7 +20,7 @@ function App() {
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/addpoll' element={<Addpoll/>}/>
       <Route path='/prev' element={<Prev/>}/>
-      <Route path='/vote/mid' element={<Votemid/>}/>
+      <Route path='/votemid' element={<Votemid/>}/>
 
 
 

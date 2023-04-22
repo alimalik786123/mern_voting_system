@@ -54,7 +54,7 @@ body('password').isLength({ min: 5 })], async (req, res) => {
         }
         const data={
             user:{
-                id:userdata.id
+                id:userdata.id 
             }
         }
         const token=jwt.sign(data,secret)

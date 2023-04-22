@@ -1,8 +1,41 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import Prevcard from './Prevcard'
+import {io} from 'socket.io-client'
+var socket
 function Prev() {
-  return (
+    // const [data1,setdata1]=useState([])
+    // const Datafood=async()=>{
+    //     let data=await fetch('http://localhost:8080/votedata',{
+    //         method:"POST",
+    //         headers:{
+    //             'Content-Type':'application/json'
+    //         }
+    //     })
+    //     data=await data.json()
+    //     setdata1(data)
+
+       
+    //      console.log(data)
+    // //    data1[0].map((data3)=>{console.log(data3.name);})
+     
+
+    // }
+    // console.log(data1)
+    // useEffect(()=>{
+    //     Datafood()},[])
+    // const handle=()=>{
+        
+    // }
+    // useEffect(()=>{
+    //     socket=io('http://localhost:8080/votedata')
+    // })
+    // const class1=localStorage.getItem("class")
+    // console.log(class1,"hai");
+  return ( 
+
+
     <div>
+      <div>
         <div class="container">
             <nav class="header__nav bg">
                 <div class="header__logo">
@@ -44,13 +77,27 @@ function Prev() {
             </nav>
         
     <div class="banner">
-        <h1>hello</h1>
     </div>
     <div class="banner2">
-        <h1>banner2</h1>
+    <div className="half1 pollname">Poll name : CR election</div>
+        <h1 className='half2 desc1'>Description : this election poll is only for 3rd year student only 3rd year studentsare allowd to vote for the student remember election is your right </h1>
+        <h3 className='desc'></h3>
     </div>
 <div class="hide1"></div> 
-    </div></div>
+    </div>
+     
+    <div class="container1">
+    <div className='row'>
+    {/* { data1[0] && data1[0].filter((data2)=>data2.class===class1).map((data3)=>{return(<Prevcard />)})} */}
+     <Prevcard/>
+     <Prevcard/>
+     <Prevcard/>
+
+       
+          </div>
+    </div>        
+    </div>
+    </div>
   )
 }
 

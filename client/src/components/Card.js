@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './home/main.css'
-import Vote from './Vote/Vote'
+import Vote from './Vote/Vote' 
 
 export default function Card(props) {
   const [new1,setnew]=useState(props.data3.candidates)
@@ -15,7 +15,7 @@ export default function Card(props) {
   }
   return (
     <>
-    <div className='col-12 col-md-6 col-lg-3 mx-5'>
+    <div className='col-12 col-md-6 col-lg-3 mx-3'>
     <div class="card col" id='card1' >
             <div class="card-body">
               <h3 class="card-title">{props.data3.name}</h3>

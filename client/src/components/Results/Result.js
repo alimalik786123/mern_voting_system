@@ -9,10 +9,10 @@ function Result() {
     const data={
         labels: ['mon','tue','wed'],
         datasets: [{
-            label:'369',
+            label:['369'],
             data: [3,6,9],
             backgroundColor:'blue',
-            height:'450px'
+           
 
         }]
     }

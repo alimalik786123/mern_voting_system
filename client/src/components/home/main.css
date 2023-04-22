@@ -340,7 +340,8 @@ h5{
   display: flex;
   position: relative;
   bottom: 217px;
-  background-color: #607D8B;
+  background-color: #ceefff;
+  border-radius: 5px;
 }
 .result1{
   height: 450px;
@@ -362,7 +363,6 @@ h5{
 }
 .rem{
   position: relative;
-  margin-bottom: -20px;
   margin-right:90px ;
   height: 50px;
   width: 120px;
@@ -379,6 +379,25 @@ h5{
       box-shadow: none;
       transform: translateY(10px);
   }
+  .res{
+    position: relative;
+    margin-right:90px ;
+    margin-top: 15px;
+    height: 50px;
+    width: 120px;
+    border-radius: 10px;
+    background-color: rgb(92, 213, 250);
+    box-shadow: 0px 8px 0px rgb(1, 97, 126);
+    font-size: x-large;
+    font:bold;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    bottom: 10px;
+    }
+    .res:active{
+        box-shadow: none;
+        transform: translateY(10px);
+    }
 #card1{
   margin: 10px;
 }

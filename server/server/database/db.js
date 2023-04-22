@@ -5,22 +5,22 @@ const mongodb=async()=>{
     await mongoose.connect(datab,{useNewUrlParser:true,useUnifiedTopology:true}, async (err,result) => {
         console.log("connected");
         const data1 = await mongoose.connection.db.collection("votes")
-        // const data2 = await mongoose.connection.db.collection("users")
+        const data2 = await mongoose.connection.db.collection("users")
         // const category = await mongoose.connection.db.collection("category")
-
+ 
 
         data1.find({}).toArray(async (err,res)=>{
            
             global.data=res
-            console.log(res
-                );
+            //  console.log(res);
            
 
-         console.log(global.data);
+        //  console.log(global.data);
         });
-        // data2.find({}).toArray((err,res1)=>{
-        //     // console.log(res1);
-        //  });
+        data2.find({}).toArray((err,res1)=>{
+            global.data1=res1
+
+        });
         //  console.log(global.name);
        
     })}

@@ -36,11 +36,14 @@ export default function Votecard(props) {
   
   return (
     <>
-    <div className='col-12 col-md-6 col-lg-3 mx-5'>
+    <div className='col-12 col-md-6 col-lg-3 mx-3'>
     <div class="card col" id='card1' >
             <div class="card-body">
-              <h3 class="card-title">{props.data3.Name}</h3>
-              <p class="card-text">{props.data3.Count}</p>
+              <h1 class="card-title">{props.data3.Name}</h1>
+              <p class="card-text">hello i am ali</p>
+              <hr />
+              <h3>Roll no.:{props.data3.Count} </h3>
+              <br />
               <button class="rem" id="RJD" value={props.data3._id} onClick={vote} data-toggle="modal" data-target="#exampleModalCenter"  >Vote</button>
             </div>
           </div>

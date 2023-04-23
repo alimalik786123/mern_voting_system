@@ -2,26 +2,44 @@
     margin-top: 3%;
     width: 60%;
     margin-left: 17%;
-    background-color: burlywood;
+    background-color: rgb(223, 242, 255);
     padding: 20px;
     border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(0, 159, 233);
+}
+.form-label{
+    font-size: 2rem;
+}
+label{
+    font-size: 1.5rem;
 }
 .txt{
     height: 40px;
     border-radius: 5px;
-    font-family: inherit;
+    font-family: inherit; 
     font-size: large;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(6, 8, 8);
 }
 .slt{
     height: 40px;
     border-radius: 5px;
     font-size: large;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(6, 8, 8);
 
 }
 .des{
     height: 70px;
     border-radius: 5px;
     font-size: large;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(6, 8, 8);
 
 }
 .slt{

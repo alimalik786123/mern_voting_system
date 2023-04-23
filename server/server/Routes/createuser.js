@@ -80,7 +80,25 @@ Router.post("/vote", jsonParser
         // console.log(try1);
     })
    
+    Router.post("/addpoll", jsonParser
+    , async (req, res) => {
+        
+            await Vote.create({
 
+                name: req.body.name,
+                class: req.body.class,
+                description:req.body.description,
+                result:req.body.result,
+                candidates:req.body.candidates
+
+
+
+            })
+            
+            res.json({ success: true })
+        
+        // console.log(try1);
+    })
     Router.post("/up", jsonParser
     , async (req, res) => {
             
@@ -90,6 +108,25 @@ Router.post("/vote", jsonParser
             res.json({ success: true })
         
         // console.log(try1);
+    })
+    Router.post("/addcand", jsonParser
+    , async (req, res) => {
+            
+            await Vote.updateOne({"_id":req.body.id},{$push:{"candidates":{Name:req.body.name,Roll:req.body.roll,Moto:req.body.moto}}})
+            await User.updateOne({"roll":req.body.user},{$push:{"voted":req.body.voteid}})
+            
+            res.json({ success: true })
+        
+        // console.log(try1);
+    })
+
+    Router.post('/votedata',jsonParser,async(req,res)=>{
+        try {
+            const data1=await User.find({"roll":req.body.roll})  
+           res.send([global.data,data1])
+        } catch (error) {     
+            
+        }
     })
 
 module.exports = Router

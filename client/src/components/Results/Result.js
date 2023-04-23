@@ -1,17 +1,23 @@
 import React from 'react'
 import { Chart as ChartJS,BarElement, CategoryScale,LinearScale, Tooltip, Legend } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import { useLocation } from 'react-router-dom';
+import Resultcard from './Resultcard'
+
 
 ChartJS.register(BarElement, CategoryScale,LinearScale, Tooltip, Legend );
 
 
 function Result() {
+    const recieve=useLocation()
+    const data1=recieve.state
+    console.log(data1);
     const data={
-        labels: ['mon','tue','wed'],
+        labels: data1.map(data2=>data2.Name),
         datasets: [{
             label:['369'],
-            data: [3,6,9],
-            backgroundColor:'blue',
+            data: data1.map(data2=>data2.Count),
+            backgroundColor:'#d4c08c',
            
 
         }]
@@ -31,22 +37,17 @@ function Result() {
                             <a href="#" class="menu__link active"><h3>Home</h3></a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Product</h3></a>
+                            <a href="/" class="menu__link"><h1>Home</h1></a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Team </h3></a>
+                            <a href="/aboutus" class="menu__link"><h1>Team </h1></a>
                         </li>
+
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Blog </h3></a>
-                        </li>
-                        <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Contact </h3></a>
+                            <a href="/contactus" class="menu__link"><h1>Contact </h1></a>
                         </li>
                     </ul>
                     <div class="header__signup">
-                        <a href="#" class="btn btn__signup">
-                            <i class="fas fa-user-plus"></i> Sign Up
-                        </a>
                     </div>
                 </div>
 
@@ -60,10 +61,11 @@ function Result() {
             </nav>
         
     <div class="banner">
-        <h1>hello</h1>
     </div>
     <div class="banner2">
-        <h1>banner2</h1>
+    <div className="half1 pollname">Poll name : CR election</div>
+        <h1 className='half2 desc1'>Description : this election poll is only for 3rd year student only 3rd year studentsare allowd to vote for the student remember election is your right </h1>
+        <h3 className='desc'></h3>
     </div>
 <div class="hide1"></div> 
   <div class="container1">
@@ -75,7 +77,18 @@ function Result() {
           
         /> 
         <hr />
+            
     </div></div>
+    <hr />
+    <div class="container1">
+    <div className='row'>
+        {data1.map((data2=>{return(<Resultcard data2={data2}/>)}))}
+     
+     {/* <Card></Card> */}
+
+       
+          </div>
+    </div>
     </div></div>
   )
 }

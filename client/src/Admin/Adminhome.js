@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import './main.css'
+import '../components/home/main.css'
 import logo from './img/logo.svg'
 import hero from './img/hero.png'
 import leaf from './img/leaf.png'
@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 
-export default function Home() {
+export default function Admin() {
     const redirect=useNavigate()
   const handle=()=>{
    localStorage.removeItem('userid') 
@@ -65,9 +65,9 @@ export default function Home() {
         <section class="hero w-120">
             <div class="hero__content">
                 <div class="hero__text">
-                    <h1 class="hero__title">A New Way to Vote on your Device</h1>
+                    <h1 class="hero__title">Welcome </h1>
                     <p class="hero__description">
-                       This website provides student and teachers to vote and add pole easily
+                       Now you are an admin, you can add/delete vote
                     </p>
                     <a href="#" class="btn btn__hero">Explore Now</a>
                 </div>
@@ -88,31 +88,22 @@ export default function Home() {
 
                 </div>
                 <div class="opportunities__body">
-                    <div class="opportunity">
+                    <div class="opportunity1">
                         {/* <img src="assets/img/opportunites/opportunity-1.svg" alt="Icon" class="opportunity__icon"/> */}
-                        <h3 class="opportunity__title">see your previous votes and results</h3>
-                        <p class="opportunity__description">On clicking the below button you can see the previous votes and the resuls of the poll
+                        <h2 class="opportunities__title">Add poll</h2>
+                        <p class="opportunity__description">On clicking the below button you can add poll
                         </p>
-                        <a href="/prev" class="btn btn__hero">Previous</a>
+                        <a href="/addpoll" class="btn btn__hero">Add now</a>
 
                     </div>
 
-                    <div class="opportunity ">
+                    <div class="opportunity1 ">
                         {/* <img src="assets/img/opportunites/opportunity-2.svg" alt="Icon" class="opportunity__icon"/> */}
-                        <h2 class="opportunities__title">vote now easily</h2>
-                    <p class="opportunities__description">On clicking the below button you can see current ongoing vote for you</p>
-                    <a href="/votemid" class="btn btn__hero">Vote now</a>
+                        <h2 class="opportunities__title">See you votes</h2>
+                    <p class="opportunities__description">On clicking the below button you can see your polls</p>
+                    <a href="/allpoll" class="btn btn__hero">See now</a>
                     </div>
-                    <div class="opportunity">
-                        {/* <img src="assets/img/opportunites/opportunity-3.svg" alt="Icon" class="opportunity__icon"/> */}
-                        <h4 class="opportunity__title">All votes
-                        </h4>
-                        <p class="opportunity__description">
-                           here you can see all the votes which is going on in campus
-                        </p>
-                        <a href="#" class="btn btn__hero">Explore Now</a>
-
-                    </div>
+                   
                 </div>
             </div>
         </section>

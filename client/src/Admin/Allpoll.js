@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import Card from '../Card'
+import Card from './Admincard'
 import {io} from 'socket.io-client'
 var socket
-function Votemid() { 
+function Allpoll() {
     const [data1,setdata1]=useState([])
     const [user,setuser]=useState([])
     let roll=window.localStorage.getItem('userid')
@@ -18,6 +18,8 @@ function Votemid() {
         data=await data.json()
         setdata1(data[0])
         setuser(data[1])
+        console.log(data)
+
         window.localStorage.setItem('voted',user[0].voted)
 
        
@@ -26,8 +28,7 @@ function Votemid() {
 
     }
     
-    console.log(data1)
-    console.log()
+    
     // const voted=user[0].voted
     // console.log(voted);
 
@@ -41,7 +42,7 @@ function Votemid() {
     const class1=localStorage.getItem("class")
     const votes=localStorage.getItem("voted")
     const arr=votes.split(",")
-    console.log(arr,'dikha');
+    console.log(arr);
   return ( 
 
 
@@ -98,7 +99,7 @@ function Votemid() {
     <div class="container1">
     <div className='row'>
     
-    { data1 && data1.filter((data2,index)=>data2.class===class1 && !arr.includes(data2._id)).map((data3)=>{return(<Card data3={data3} btn={data3._id}/>)})}
+    { data1 && data1.map((data3)=>{return(<Card data3={data3} btn={data3._id}/>)})}
 
        
           </div>
@@ -108,4 +109,4 @@ function Votemid() {
   )
 }
 
-export default Votemid
+export default Allpoll

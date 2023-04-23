@@ -1,52 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import Card from '../Card'
-import {io} from 'socket.io-client'
-var socket
-function Votemid() { 
-    const [data1,setdata1]=useState([])
-    const [user,setuser]=useState([])
-    let roll=window.localStorage.getItem('userid')
- 
-    const Datafood=async()=>{
-        let data=await fetch('http://localhost:8080/votedata',{
-            method:"POST",
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify({roll:roll})
-        })
-        data=await data.json()
-        setdata1(data[0])
-        setuser(data[1])
-        window.localStorage.setItem('voted',user[0].voted)
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-       
-    //    data1[0].map((data3)=>{console.log(data3.name);})
-     
-
-    }
-    
-    console.log(data1)
-    console.log()
-    // const voted=user[0].voted
-    // console.log(voted);
-
-    useEffect(()=>{
-        Datafood()},[])
-    
-    
-    useEffect(()=>{
-        socket=io('http://localhost:8080/votedata')
-    })
-    const class1=localStorage.getItem("class")
-    const votes=localStorage.getItem("voted")
-    const arr=votes.split(",")
-    console.log(arr,'dikha');
-  return ( 
-
-
-    <div>
-      <div>
+export default function Details() {
+    const redirect=useNavigate()
+  const handle=()=>{
+    redirect('/addcand')
+  }
+  return (
+    <>
+       <div>
         <div class="container">
             <nav class="header__nav bg">
                 <div class="header__logo">
@@ -62,7 +24,7 @@ function Votemid() {
                             <a href="#" class="menu__link"><h3>Product</h3></a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Team </h3></a>
+                            <a href="#" class="menu__link"><h3>Tea</h3></a>
                         </li>
                         <li class="menu__item">
                             <a href="#" class="menu__link"><h3>Blog </h3></a>
@@ -73,7 +35,7 @@ function Votemid() {
                     </ul>
                     <div class="header__signup">
                         <a href="#" class="btn btn__signup">
-                            <i class="fas fa-user-plus"></i> Sign out
+                            <i class="fas fa-user-plus"></i> Sign Up
                         </a>
                     </div>
                 </div>
@@ -88,24 +50,26 @@ function Votemid() {
             </nav>
         
     <div class="banner">
-    </div>
-    <div class="banner2">
         <h1></h1>
     </div>
-<div class="hide1"></div> 
+    <div class="banner2">
+        <div className="half1 pollname">Poll name : CR election</div>
+        {/* <h1 className='half2 desc1'>Description : this election poll is only for 3rd year student only 3rd year studentsare allowd to vote for the student remember election is your right {recieve.state.Name}</h1> */}
+        <h3 className='desc'></h3>
     </div>
-      
-    <div class="container1">
+<div class="hide1"></div> 
+   <div class="container1">
     <div className='row'>
-    
-    { data1 && data1.filter((data2,index)=>data2.class===class1 && !arr.includes(data2._id)).map((data3)=>{return(<Card data3={data3} btn={data3._id}/>)})}
-
+        {/* <h1>{props.name}</h1> */}
+    {/* {recieve.state.map((data3)=>{return(<Votecard data3={data3} />)})} */}
+ 
+</div>
        
           </div>
-    </div>        
+       
     </div>
     </div>
-  )
+    <button className='addcan' onClick={handle}><h2>Add candidates</h2></button>
+    </>
+    )
 }
-
-export default Votemid

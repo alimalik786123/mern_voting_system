@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'; 
+import { useLocation, useNavigate } from 'react-router-dom';  
 import Votecard from './Votecard'
 const Vote=(props)=>{
     const redirect=useNavigate()

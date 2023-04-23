@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import './regstyle.css'
+import '../Screens/Signup/regstyle.css'
 
-function Signup() {
-    const [data,setdata]=useState({name:'',roll:null,email:'',class:'',password:''})
+function Adminreg() {
+    const [data,setdata]=useState({name:'',email:'',password:''})
     let redirect=useNavigate()
     const setfun=(e)=>{
         setdata({...data,[e.target.name]:e.target.value})
@@ -16,13 +16,13 @@ function Signup() {
            headers:{
             'Content-Type':'application/json',
            },
-           body:JSON.stringify({name:data.name,roll:data.roll,email:data.email,class:data.class,password:data.password})
+           body:JSON.stringify({name:data.name,email:data.email,password:data.password})
         })
         const resp=await response.json() 
         console.log(resp);
         if(resp.success){
-          window.localStorage.setItem("userid",data.roll)
-          window.localStorage.setItem("class",data.class)
+          window.localStorage.setItem("admin",data.email)
+        //   window.localStorage.setItem("class",data.class)
 
 
            redirect("/")
@@ -62,8 +62,8 @@ function Signup() {
           />
         </div>
         <div className="col-lg-7 px-5 pt-5">
-          <h1 className="font-weight-bold py-3">welcome</h1>
-          <h4 className="">Register for new account</h4>
+          <h1 className="font-weight-bold py-3">Administrator</h1>
+          <h4 className="">Register for administrator account</h4>
           <form onSubmit={submit}>
             <div className="form-row">
               <div className="col-lg-8">
@@ -77,23 +77,11 @@ function Signup() {
                 />
               </div>
             </div>
+    
             <div className="form-row">
               <div className="col-lg-8">
                 <input
-                  type="number"
-                  className="form-control my-3 p-4 "
-                  name="roll"
-                  placeholder="Roll number"
-                  required=""
-                  maxLength={4}
-                  onChange={setfun}
-                />
-              </div>
-            </div>
-            <div className="form-row">
-              <div className="col-lg-8">
-                <input
-                  type="text"
+                  type="email"
                   className="form-control my-3 p-4 "
                   name="email"
                   placeholder="Email"
@@ -111,30 +99,8 @@ function Signup() {
                   placeholder="Email"
                   required=""
                 /> */}
-                <select className="form-control my-3 " name="class" id="cars" placeholder='-select-'
-                onChange={setfun}>
-    <option>-select-</option>
-      
-      <option value="">FEA</option>
-      <option value="feb">FEB</option>
-      <option value="fec">FEC</option>
-      <option value="fee">FEE</option>
-      <option value="secompsa">SEcompsA</option>
-      <option value="secompsb">SEcompsB</option>
-      <option value="seecs">SE-ECS</option>
-      <option value="seaids">SE-AIDS</option>
-      <option value="semech">SE-MECH</option>
-      <option value="tecompsa">TEcompsA</option>
-      <option value="tecompsb">TEcompsB</option>
-      <option value="teecs">TE-ECS</option>
-      <option value="teaids">TE-AIDS</option>
-      <option value="temech">TE-MECH</option>
-      <option value="becompsa">BEcompsA</option>
-      <option value="becompsb">BEcompsB</option>
-      <option value="beecs">BE-ECS</option>
-      <option value="beaids">BE-AIDS</option>
-      <option value="bemech">BE-MECH</option>
-    </select>
+              
+    
   
 
  
@@ -184,4 +150,4 @@ function Signup() {
   )
 }
 
-export default Signup
+export default Adminreg

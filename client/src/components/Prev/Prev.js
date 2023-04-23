@@ -3,34 +3,45 @@ import Prevcard from './Prevcard'
 import {io} from 'socket.io-client'
 var socket
 function Prev() {
-    // const [data1,setdata1]=useState([])
-    // const Datafood=async()=>{
-    //     let data=await fetch('http://localhost:8080/votedata',{
-    //         method:"POST",
-    //         headers:{
-    //             'Content-Type':'application/json'
-    //         }
-    //     })
-    //     data=await data.json()
-    //     setdata1(data)
+    const [data1,setdata1]=useState([])
+    const [user,setuser]=useState([])
+    let roll=window.localStorage.getItem('userid')
+ 
+    const Datafood=async()=>{
+        let data=await fetch('http://localhost:8080/votedata',{
+            method:"POST",
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({roll:roll})
+        })
+        data=await data.json()
+        setdata1(data[0])
+        setuser(data[1])
+        window.localStorage.setItem('voted',user[0].voted)
 
        
-    //      console.log(data)
-    // //    data1[0].map((data3)=>{console.log(data3.name);})
+    //    data1[0].map((data3)=>{console.log(data3.name);})
      
 
-    // }
-    // console.log(data1)
-    // useEffect(()=>{
-    //     Datafood()},[])
-    // const handle=()=>{
-        
-    // }
-    // useEffect(()=>{
-    //     socket=io('http://localhost:8080/votedata')
-    // })
-    // const class1=localStorage.getItem("class")
-    // console.log(class1,"hai");
+    }
+    
+    console.log(data1)
+    console.log()
+    // const voted=user[0].voted
+    // console.log(voted);
+
+    useEffect(()=>{
+        Datafood()},[])
+    
+    
+    useEffect(()=>{
+        socket=io('http://localhost:8080/votedata')
+    })
+    const class1=localStorage.getItem("class")
+    const votes=localStorage.getItem("voted")
+    const arr=votes.split(",")
+    console.log(arr);
   return ( 
 
 
@@ -88,10 +99,10 @@ function Prev() {
      
     <div class="container1">
     <div className='row'>
-    {/* { data1[0] && data1[0].filter((data2)=>data2.class===class1).map((data3)=>{return(<Prevcard />)})} */}
+    { data1 && data1.filter((data2,index)=>data2.class===class1 && arr.includes(data2._id)).map((data3)=>{return(<Prevcard data3={data3} btn={data3._id}/>)})}
+     {/* <Prevcard/>
      <Prevcard/>
-     <Prevcard/>
-     <Prevcard/>
+     <Prevcard/> */}
 
        
           </div>

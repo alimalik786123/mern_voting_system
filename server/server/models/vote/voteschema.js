@@ -12,11 +12,17 @@ const schema= new mongoose.Schema({
         type:String,
         required:true
     },
+    result:{ 
+        type:String,
+        required:true
+    }, 
     candidates:[{
         Name:String,
-        Class:String,
+        Roll:Number,
         Moto:String,
-        Count:Number
+        Count:{type:Number,
+              default:0        
+        }
     }]
     
     

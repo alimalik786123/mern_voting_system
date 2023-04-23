@@ -9,7 +9,7 @@ export default function Votecard(props) {
   const vote=async(e)=>{
     //  console.log(e.target.value);
      setdata(e.target.value)
-     console.log(data);
+     console.log(data); 
      let user=window.localStorage.getItem('userid')
      let voteid=window.localStorage.getItem('id')
      const response= await fetch("http://localhost:8080/up",{

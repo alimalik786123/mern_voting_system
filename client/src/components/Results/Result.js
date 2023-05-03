@@ -9,9 +9,11 @@ ChartJS.register(BarElement, CategoryScale,LinearScale, Tooltip, Legend );
 
 
 function Result() {
+    
     const recieve=useLocation()
     const data1=recieve.state
     console.log(data1);
+    
     const data={
         labels: data1.map(data2=>data2.Name),
         datasets: [{

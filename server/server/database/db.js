@@ -11,7 +11,7 @@ const mongodb=async()=>{
 
         data1.find({}).toArray(async (err,res)=>{
            
-            global.data=res
+            global.data=res   
             //  console.log(res);
            
 

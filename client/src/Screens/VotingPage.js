@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 function VotingPage() {
   return (
     <div>
-        <Navbar/>
+        <Navbar/> 
     </div>
   )
 }

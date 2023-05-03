@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../Card'
 import {io} from 'socket.io-client'
+import logo from '../home/img/logo.png'
+
 var socket
 function Votemid() { 
-    const [data1,setdata1]=useState([])
+    const [data1,setdata1]=useState([]) 
     const [user,setuser]=useState([])
     let roll=window.localStorage.getItem('userid')
  
@@ -18,7 +20,6 @@ function Votemid() {
         data=await data.json()
         setdata1(data[0])
         setuser(data[1])
-        window.localStorage.setItem('voted',user[0].voted)
 
        
     //    data1[0].map((data3)=>{console.log(data3.name);})
@@ -39,9 +40,15 @@ function Votemid() {
         socket=io('http://localhost:8080/votedata')
     })
     const class1=localStorage.getItem("class")
-    const votes=localStorage.getItem("voted")
-    const arr=votes.split(",")
+    const arr=localStorage.getItem("voted")
+   
     console.log(arr,'dikha');
+    const condition1=(data2)=>{
+        if(!arr){
+            return true
+        }
+        else {return !arr.includes(data2._id)}
+    }
   return ( 
 
 
@@ -50,22 +57,22 @@ function Votemid() {
         <div class="container">
             <nav class="header__nav bg">
                 <div class="header__logo">
-                    <img src="assets/img/logo.svg" alt="Logo"/>
+                    <img src={logo} alt="Logo"/>
                 </div>
                 <div class="header__nav__content">
-                    <div class="nav-close-icon"></div>
+                    <div class="nav-close-icon"></div> 
                     <ul class="header__menu">
                         <li class="menu__item">
                             <a href="#" class="menu__link active"><h3>Home</h3></a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Product</h3></a>
+                            <a href="#" class="menu__link"><h3>Home</h3></a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Team </h3></a>
+                            <a href="#" class="menu__link"><h3>back</h3></a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Blog </h3></a>
+                            <a href="#" class="menu__link"><h3>Aboutus </h3></a>
                         </li>
                         <li class="menu__item">
                             <a href="#" class="menu__link"><h3>Contact </h3></a>
@@ -73,7 +80,7 @@ function Votemid() {
                     </ul>
                     <div class="header__signup">
                         <a href="#" class="btn btn__signup">
-                            <i class="fas fa-user-plus"></i> Sign out
+                            <i class="fas fa-user-plus"></i> Back
                         </a>
                     </div>
                 </div>
@@ -90,7 +97,9 @@ function Votemid() {
     <div class="banner">
     </div>
     <div class="banner2">
-        <h1></h1>
+        <div className="half1 pollname">These are the polls</div>
+        <h1 className='half2 desc1'>Description : Here you can vote for any student easily </h1>
+        <h3 className='desc'></h3>
     </div>
 <div class="hide1"></div> 
     </div>
@@ -98,7 +107,7 @@ function Votemid() {
     <div class="container1">
     <div className='row'>
     
-    { data1 && data1.filter((data2,index)=>data2.class===class1 && !arr.includes(data2._id)).map((data3)=>{return(<Card data3={data3} btn={data3._id}/>)})}
+    { data1 && data1.filter((data2,index)=>data2.class===class1 && condition1(data2)).map((data3)=>{return(<Card data3={data3} btn={data3._id}/>)})}
 
        
           </div>

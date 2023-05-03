@@ -10,14 +10,14 @@ import { useNavigate } from 'react-router-dom'
 export default function Admin() {
     const redirect=useNavigate()
   const handle=()=>{
-   localStorage.removeItem('userid') 
-   redirect('/login')
+   localStorage.removeItem('admin') 
+   redirect('/adminlog')
   } 
-  useEffect(()=>{
-    if(!localStorage.getItem("userid")){
-        redirect('/login')
-    }
-},[])
+//   useEffect(()=>{
+//     if(!localStorage.getItem("admin")){
+//         redirect('/login')
+//     }
+// },[])
   return (
     <div>
      <div class="container">
@@ -83,8 +83,8 @@ export default function Admin() {
             </div>
             <div class="opportunities__content w-105">
                 <div class="opportunities__head">
-                    <h2 class="opportunities__title">vote now easily</h2>
-                    <p class="opportunities__description">On clicking the below button you can see current ongoing vote for you</p>
+                    <h2 class="opportunities__title">Add poll easily (ADMIN)</h2>
+                    <p class="opportunities__description">On clicking the below buttons you can see and add polls</p>
 
                 </div>
                 <div class="opportunities__body">

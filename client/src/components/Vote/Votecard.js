@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../home/main.css'
+import logo from '../home/img/logo.png'
+
 
 export default function Votecard(props) {
    
@@ -23,6 +25,10 @@ export default function Votecard(props) {
    const resp=await response.json()
    console.log(resp);
    if(resp.success){
+    const arr = [localStorage.getItem("voted")]
+    arr.push(voteid)
+    console.log(arr);
+    localStorage.setItem("voted",arr)
     localStorage.removeItem("id")
 
     redirect('/')
@@ -40,9 +46,9 @@ export default function Votecard(props) {
     <div class="card col" id='card1' >
             <div class="card-body">
               <h1 class="card-title">{props.data3.Name}</h1>
-              <p class="card-text">hello i am ali</p>
+              <p class="card-text">{props.data3.Moto}</p>
               <hr />
-              <h3>Roll no.:{props.data3.Count} </h3>
+              <h3>Roll no.:{props.data3.Roll} </h3>
               <br />
               <button class="rem" id="RJD" value={props.data3._id} onClick={vote} data-toggle="modal" data-target="#exampleModalCenter"  >Vote</button>
             </div>

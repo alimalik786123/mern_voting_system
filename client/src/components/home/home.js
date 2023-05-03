@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react'
 import './main.css'
 import logo from './img/logo.svg'
-import hero from './img/hero.png'
+import hero from './img/hero.png' 
 import leaf from './img/leaf.png'
 import { useNavigate } from 'react-router-dom'
 
 
 
-export default function Home() {
+export default function Home() { 
     const redirect=useNavigate()
   const handle=()=>{
    localStorage.removeItem('userid') 
+   localStorage.removeItem('voted') 
+
    redirect('/login')
   } 
   useEffect(()=>{
@@ -32,15 +34,11 @@ export default function Home() {
                         <li class="menu__item">
                             <a href="/" class="menu__link active">Home</a>
                         </li>
-                        <li class="menu__item">
-                            <a href="/" class="menu__link">Product</a>
-                        </li>
+                       
                         <li class="menu__item">
                             <a href="/" class="menu__link">Team</a>
                         </li>
-                        <li class="menu__item">
-                            <a href="/" class="menu__link">Blog</a>
-                        </li>
+                       
                         <li class="menu__item">
                             <a href="/" class="menu__link">Contact</a>
                         </li>
@@ -51,7 +49,7 @@ export default function Home() {
                         </a>
                     </div>
                 </div>
-
+ 
                 <div class="hamburger-menu-wrap">
                     <div class="hamburger-menu">
                         <div class="line"></div>
@@ -90,10 +88,10 @@ export default function Home() {
                 <div class="opportunities__body">
                     <div class="opportunity">
                         {/* <img src="assets/img/opportunites/opportunity-1.svg" alt="Icon" class="opportunity__icon"/> */}
-                        <h3 class="opportunity__title">see your previous votes and results</h3>
+                        <h2 class="opportunities__title">Results and previous votes</h2>
                         <p class="opportunity__description">On clicking the below button you can see the previous votes and the resuls of the poll
                         </p>
-                        <a href="/prev" class="btn btn__hero">Previous</a>
+                        <a href="/prev" class="btn btn__hero">Result</a>
 
                     </div>
 
@@ -134,53 +132,15 @@ export default function Home() {
                         <li class="footer_nav__item">
                             <a href="#" class="footer_nav__link">Team</a>
                         </li>
-                        <li class="footer_nav__item">
-                            <a href="#" class="footer_nav__link">Careers</a>
-                        </li>
+                     
                         <li class="footer_nav__item">
                             <a href="#" class="footer_nav__link">Contact</a>
                         </li>
                     </ul>
-                    <ul class="footer_nav__menu">
-                        <li class="footer_nav__item">
-                            <h4 class="footer_nav__menu__title">INVEST</h4>
-                        </li>
-                        <li class="footer_nav__item">
-                            <a href="#" class="footer_nav__link">Features</a>
-                        </li>
-                        <li class="footer_nav__item">
-                            <a href="#" class="footer_nav__link">How it works</a>
-                        </li>
-                        <li class="footer_nav__item">
-                            <a href="#" class="footer_nav__link">Pricing</a>
-                        </li>
-                        <li class="footer_nav__item">
-                            <a href="#" class="footer_nav__link">Login</a>
-                        </li>
-                    </ul>
-                    <ul class="footer_nav__menu">
-                        <li class="footer_nav__item">
-                            <h4 class="footer_nav__menu__title">LEGAL</h4>
-                        </li>
-                        <li class="footer_nav__item">
-                            <a href="#" class="footer_nav__link">Privacy</a>
-                        </li>
-                        <li class="footer_nav__item">
-                            <a href="#" class="footer_nav__link">Terms</a>
-                        </li>
-                        <li class="footer_nav__item">
-                            <a href="#" class="footer_nav__link">Security</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="footer__contact">
-                    <h5 class="footer__contact__title">Blog Zou</h5>
-                    <span>Write email to us</span>
-                    <a href="mailto:info@zoufarm.com" class="email">info@zoufarm.com</a>
-                    <a href="#" class="btn btn__signin">
-                        <i class="far fa-user"></i> Sign In
-                    </a>
-                </div>
+                  
+                   
+=                </nav>
+               
             </div>
             <div class="footer__bottom">
                 <div class="footer__bottom__content w-105">
@@ -188,7 +148,7 @@ export default function Home() {
                         <img src={logo} alt="Logo"/>
                     </div>
                     <p class="footer_copyright">
-                        © Copyright 2021. Zou Capital Pty Ltd (ABN 45 4545 87363).
+                        © Copyright : Ali malik,shubham sonar,roland D'cruz, Royston
                     </p>
                 </div>
             </div>

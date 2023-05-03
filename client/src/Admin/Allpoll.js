@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Admincard'
 import {io} from 'socket.io-client'
+import logo from '../components/home/img/logo.png'
 var socket
 function Allpoll() {
     const [data1,setdata1]=useState([])
-    const [user,setuser]=useState([])
-    let roll=window.localStorage.getItem('userid')
+    let by=localStorage.getItem('admin')
  
     const Datafood=async()=>{
-        let data=await fetch('http://localhost:8080/votedata',{
+        let data=await fetch('http://localhost:8080/adminpoll',{
             method:"POST",
             headers:{
                 'Content-Type':'application/json'
             },
-            body:JSON.stringify({roll:roll})
+            body:JSON.stringify({email:by})
         })
         data=await data.json()
-        setdata1(data[0])
-        setuser(data[1])
-        console.log(data)
+        setdata1(data)
+       
+        console.log(data1)
 
-        window.localStorage.setItem('voted',user[0].voted)
+        // window.localStorage.setItem('voted',user[0].voted)
 
        
     //    data1[0].map((data3)=>{console.log(data3.name);})
@@ -39,10 +39,10 @@ function Allpoll() {
     useEffect(()=>{
         socket=io('http://localhost:8080/votedata')
     })
-    const class1=localStorage.getItem("class")
-    const votes=localStorage.getItem("voted")
-    const arr=votes.split(",")
-    console.log(arr);
+    // const class1=localStorage.getItem("class")
+    // const votes=localStorage.getItem("voted")
+    // const arr=votes.split(",")
+    // console.log(arr);
   return ( 
 
 
@@ -51,7 +51,7 @@ function Allpoll() {
         <div class="container">
             <nav class="header__nav bg">
                 <div class="header__logo">
-                    <img src="assets/img/logo.svg" alt="Logo"/>
+                    <img src={logo} alt="Logo"/>
                 </div>
                 <div class="header__nav__content">
                     <div class="nav-close-icon"></div>
@@ -60,28 +60,28 @@ function Allpoll() {
                             <a href="#" class="menu__link active"><h3>Home</h3></a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Product</h3></a>
+                            <a href="#" class="menu__link"><h3>Home</h3></a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Team </h3></a>
+                            <a href="#" class="menu__link"><h3>Back</h3></a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Blog </h3></a>
+                            <a href="#" class="menu__link"><h3>Aboutus </h3></a>
                         </li>
                         <li class="menu__item">
                             <a href="#" class="menu__link"><h3>Contact </h3></a>
                         </li>
                     </ul>
                     <div class="header__signup">
-                        <a href="#" class="btn btn__signup">
-                            <i class="fas fa-user-plus"></i> Sign out
+                        <a href="/admin" class="btn btn__signup">
+                            <i class="fa-solid fa-house"></i> HOME
                         </a>
                     </div>
                 </div>
 
                 <div class="hamburger-menu-wrap">
                     <div class="hamburger-menu">
-                        <div class="line"></div>
+                        <div class="line"></div> 
                         <div class="line"></div>
                         <div class="line"></div> 
                     </div>
@@ -91,7 +91,9 @@ function Allpoll() {
     <div class="banner">
     </div>
     <div class="banner2">
-        <h1></h1>
+        <div className="half1 pollname">Your all polls details</div>
+        <h1 className='half2 desc1'>Description : Here you can see all your polls and add candidates after clicking on details </h1>
+        <h3 className='desc'></h3>
     </div>
 <div class="hide1"></div> 
     </div>

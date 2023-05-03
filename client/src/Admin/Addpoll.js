@@ -9,6 +9,7 @@ function Addpoll() {
       setdata({...data,[e.target.name]:e.target.value})
       console.log(data);
   }
+  const email=localStorage.getItem('admin')
   const submit=async(e)=>{
       e.preventDefault()
       const response= await fetch("http://localhost:8080/addpoll",{
@@ -16,7 +17,7 @@ function Addpoll() {
          headers:{
           'Content-Type':'application/json',
          },
-         body:JSON.stringify({name:data.name,class:data.class,result:data.result,description:data.description})
+         body:JSON.stringify({name:data.name,class:data.class,result:data.result,description:data.description,email:email})
       })
       const resp=await response.json()
       console.log(resp);

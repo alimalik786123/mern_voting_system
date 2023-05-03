@@ -11,7 +11,7 @@ function Adminreg() {
     }
     const submit=async(e)=>{
         e.preventDefault()
-        const response= await fetch("http://localhost:8080/user",{
+        const response= await fetch("http://localhost:8080/admin",{
            method:'POST',
            headers:{
             'Content-Type':'application/json',
@@ -25,7 +25,7 @@ function Adminreg() {
         //   window.localStorage.setItem("class",data.class)
 
 
-           redirect("/")
+           redirect("/admin")
         }
         else if(!resp.success){
             alert("Enter valid details")

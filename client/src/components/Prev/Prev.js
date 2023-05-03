@@ -32,7 +32,7 @@ function Prev() {
     // console.log(voted);
 
     useEffect(()=>{
-        Datafood()},[])
+        Datafood()},[]) 
     
     
     useEffect(()=>{
@@ -58,9 +58,7 @@ function Prev() {
                         <li class="menu__item">
                             <a href="#" class="menu__link active"><h3>Home</h3></a>
                         </li>
-                        <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Product</h3></a>
-                        </li>
+                       
                         <li class="menu__item">
                             <a href="#" class="menu__link"><h3>Team </h3></a>
                         </li>
@@ -72,8 +70,8 @@ function Prev() {
                         </li>
                     </ul>
                     <div class="header__signup">
-                        <a href="#" class="btn btn__signup">
-                            <i class="fas fa-user-plus"></i> Sign Up
+                        <a href="/" class="btn btn__signup">
+                            <i class="fas fa-user-plus"></i> Home
                         </a>
                     </div>
                 </div>
@@ -90,8 +88,8 @@ function Prev() {
     <div class="banner">
     </div>
     <div class="banner2">
-    <div className="half1 pollname">Poll name : CR election</div>
-        <h1 className='half2 desc1'>Description : this election poll is only for 3rd year student only 3rd year studentsare allowd to vote for the student remember election is your right </h1>
+    <div className="half1 pollname">Results page(voted)</div>
+        <h1 className='half2 desc1'>Description : Here you can see results of all polls which you have voted </h1>
         <h3 className='desc'></h3>
     </div>
 <div class="hide1"></div> 

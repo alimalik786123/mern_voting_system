@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';  
 import Votecard from './Votecard'
+import logo from '../home/img/logo.png'
+
 const Vote=(props)=>{
     const redirect=useNavigate()
-    useEffect(()=>{
+    useEffect(()=>{ 
         if(!localStorage.getItem("id")){
             redirect('/')
         }
@@ -15,7 +17,7 @@ const Vote=(props)=>{
         <div class="container">
             <nav class="header__nav bg">
                 <div class="header__logo">
-                    <img src="assets/img/logo.svg" alt="Logo"/>
+                    <img src={logo} alt="Logo"/>
                 </div>
                 <div class="header__nav__content">
                     <div class="nav-close-icon"></div>
@@ -24,13 +26,13 @@ const Vote=(props)=>{
                             <a href="#" class="menu__link active"><h3>Home</h3></a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Product</h3></a>
+                            <a href="#" class="menu__link"><h3>Home</h3></a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Tea</h3></a>
+                            <a href="#" class="menu__link"><h3>Back</h3></a>
                         </li>
                         <li class="menu__item">
-                            <a href="#" class="menu__link"><h3>Blog </h3></a>
+                            <a href="#" class="menu__link"><h3>Aboutus</h3></a>
                         </li>
                         <li class="menu__item">
                             <a href="#" class="menu__link"><h3>Contact </h3></a>
@@ -38,7 +40,7 @@ const Vote=(props)=>{
                     </ul>
                     <div class="header__signup">
                         <a href="#" class="btn btn__signup">
-                            <i class="fas fa-user-plus"></i> Sign Up
+                             Back
                         </a>
                     </div>
                 </div>

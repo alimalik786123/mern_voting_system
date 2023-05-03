@@ -3,7 +3,7 @@ const schema= new mongoose.Schema({
     name:{
         type:String,
         required:true
-    },
+    },  
     class:{
         type:String,
         
@@ -23,7 +23,10 @@ const schema= new mongoose.Schema({
         Count:{type:Number,
               default:0        
         }
-    }]
+    }],
+    by:{
+        type:String
+    }
     
     
 })

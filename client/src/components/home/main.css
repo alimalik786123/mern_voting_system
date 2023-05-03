@@ -343,6 +343,13 @@ h5{
   background-color: #ceefff;
   border-radius: 5px;
 }
+.container2{
+
+  position: relative;
+  bottom: 217px;
+  background-color: #ceefff;
+  border-radius: 5px;
+}
 .result1{
   height: 450px;
     background-color: aquamarine;

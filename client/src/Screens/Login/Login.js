@@ -21,9 +21,11 @@ function Login() {
         const resp=await response.json()
         console.log(resp);
         if(resp.success){
+          const arr=resp.userdata.voted
+          window.localStorage.setItem('voted',JSON.stringify(arr))
           window.localStorage.setItem("userid",data.roll)
 
-           redirect1("/")
+           redirect1("/adminhome")
         }
         else if(!resp.success){
             alert("Enter valid details")

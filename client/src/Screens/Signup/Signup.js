@@ -3,13 +3,18 @@ import { useNavigate } from 'react-router-dom'
 import './regstyle.css'
 
 function Signup() {
-    const [data,setdata]=useState({name:'',roll:null,email:'',class:'',password:''})
+    const [data,setdata]=useState({name:'',roll:null,email:'',class:'',password:'',password2:''})
     let redirect=useNavigate()
     const setfun=(e)=>{
         setdata({...data,[e.target.name]:e.target.value})
         console.log(data);
     }
     const submit=async(e)=>{
+      if(data.password==!data.password2){
+        alert("password should match")
+
+      }
+      else{
         e.preventDefault()
         const response= await fetch("http://localhost:8080/user",{
            method:'POST',
@@ -23,6 +28,8 @@ function Signup() {
         if(resp.success){
           window.localStorage.setItem("userid",data.roll)
           window.localStorage.setItem("class",data.class)
+          window.localStorage.setItem("voted",null)
+
 
 
            redirect("/")
@@ -31,7 +38,7 @@ function Signup() {
             alert("Enter valid details")
         }
         
-
+      }
     }
   return (
     <div>
@@ -157,6 +164,7 @@ function Signup() {
                   type="password"
                   className="form-control my-3 p-4  new2"
                   name="password2"
+                  onChange={setfun}
                   placeholder="Confirm Password"
                 />
               </div>

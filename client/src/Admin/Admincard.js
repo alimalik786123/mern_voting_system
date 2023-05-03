@@ -1,16 +1,18 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import '../components/home/main.css'
-
+ 
 export default function Card(props) {
   const [new1,setnew]=useState(props.data3.candidates)
   const location=useNavigate()
   const handle=(e)=>{
     // setnew(e.target.value)
-    // console.log(new1);
+    console.log(new1);
     window.localStorage.setItem("currid",e.target.name)
+    let data=new1
+    window.localStorage.setItem("currdata",JSON.stringify(new1))
 
-    location("/detail",new1 && {state:new1})
+    location("/detail",new1 && {state:data})
   }
   return (
     <>

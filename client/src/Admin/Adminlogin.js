@@ -13,7 +13,7 @@ function Adminlog() {
         console.log(data);
     }
     const submit=async(e)=>{
-
+ 
         e.preventDefault()
         if(data.password.length<7){
             console.log('hi');

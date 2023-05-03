@@ -1,9 +1,15 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+import Candcard from './Candcard'
 
 export default function Details() {
     const redirect=useNavigate()
-  const handle=()=>{
+    const recieve=useLocation() 
+    var data=localStorage.getItem("currdata")
+    var newdata=JSON.parse(data)
+    console.log(newdata,"haia");
+
+  const handle=()=>{ 
     redirect('/addcand')
   }
   return (
@@ -34,8 +40,8 @@ export default function Details() {
                         </li>
                     </ul>
                     <div class="header__signup">
-                        <a href="#" class="btn btn__signup">
-                            <i class="fas fa-user-plus"></i> Sign Up
+                        <a href="/admin" class="btn btn__signup">
+                            <i class="fas fa-user-plus"></i> Home
                         </a>
                     </div>
                 </div>
@@ -53,15 +59,15 @@ export default function Details() {
         <h1></h1>
     </div>
     <div class="banner2">
-        <div className="half1 pollname">Poll name : CR election</div>
+        <div className="half1 pollname">Add candidates by using below button</div>
         {/* <h1 className='half2 desc1'>Description : this election poll is only for 3rd year student only 3rd year studentsare allowd to vote for the student remember election is your right {recieve.state.Name}</h1> */}
         <h3 className='desc'></h3>
     </div>
 <div class="hide1"></div> 
-   <div class="container1">
+   <div class="container2">
     <div className='row'>
         {/* <h1>{props.name}</h1> */}
-    {/* {recieve.state.map((data3)=>{return(<Votecard data3={data3} />)})} */}
+    {newdata.map((data3)=>{return(<Candcard data3={data3} />)})}
  
 </div>
        

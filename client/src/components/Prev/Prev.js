@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Prevcard from './Prevcard'
 import {io} from 'socket.io-client'
+import logo from "../home/img/logo.png"
 var socket
 function Prev() {
     const [data1,setdata1]=useState([])
@@ -50,7 +51,7 @@ function Prev() {
         <div class="container">
             <nav class="header__nav bg">
                 <div class="header__logo">
-                    <img src="assets/img/logo.svg" alt="Logo"/>
+                    <img src={logo} alt="Logo"/>
                 </div>
                 <div class="header__nav__content">
                     <div class="nav-close-icon"></div>
@@ -95,7 +96,7 @@ function Prev() {
 <div class="hide1"></div> 
     </div>
      
-    <div class="container1">
+    <div class="container2">
     <div className='row'>
     { data1 && data1.filter((data2,index)=>data2.class===class1 && arr.includes(data2._id)).map((data3)=>{return(<Prevcard data3={data3} btn={data3._id}/>)})}
      {/* <Prevcard/>

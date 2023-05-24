@@ -44,7 +44,7 @@ const Vote=(props)=>{
                         </a>
                     </div>
                 </div>
-
+ 
                 <div class="hamburger-menu-wrap">
                     <div class="hamburger-menu">
                         <div class="line"></div>
@@ -63,7 +63,7 @@ const Vote=(props)=>{
         <h3 className='desc'></h3>
     </div>
 <div class="hide1"></div> 
-   <div class="container1">
+   <div class="container2">
     <div className='row'>
         <h1>{props.name}</h1>
     {recieve.state.map((data3)=>{return(<Votecard data3={data3} />)})}

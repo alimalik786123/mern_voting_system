@@ -99,7 +99,7 @@ export default function Admin() {
 
                     <div class="opportunity1 ">
                         {/* <img src="assets/img/opportunites/opportunity-2.svg" alt="Icon" class="opportunity__icon"/> */}
-                        <h2 class="opportunities__title">See you votes</h2>
+                        <h2 class="opportunities__title">See your votes</h2>
                     <p class="opportunities__description">On clicking the below button you can see your polls</p>
                     <a href="/allpoll" class="btn btn__hero">See now</a>
                     </div>

@@ -17,7 +17,7 @@ function Result() {
     const data={
         labels: data1.map(data2=>data2.Name),
         datasets: [{
-            label:['369'],
+            label:['Count'],
             data: data1.map(data2=>data2.Count),
             backgroundColor:'#d4c08c',
            

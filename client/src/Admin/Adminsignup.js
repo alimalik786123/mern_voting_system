@@ -133,7 +133,7 @@ function Adminreg() {
               </div>
             </div>
             <p>
-              Already have an account?<a href="/login">Login</a>
+              Already have an account?<a href="/adminlog">Login</a>
             </p>
             <p>
               Signup as administrator<a href="/adminreg"> :Click here for admin</a>

@@ -3,7 +3,7 @@ const mongo = require('./database/db');
 mongo() 
 const router=require("./Routes/createuser")
 const display=require("./Routes/display")
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser') 
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 const app = express();

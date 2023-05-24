@@ -1,13 +1,13 @@
 const express = require('express');
 const Router = express.Router()
 const User = require("../models/Schema");   
-const Vote = require("../models/vote/voteschema");
+const Vote = require("../models/vote/voteschema"); 
 const Admin = require("../models/Admin"); 
 
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
-const { body, validationResult } = require('express-validator')
+const { body, validationResult } = require('express-validator') 
 const jwt=require('jsonwebtoken')
 const secret="mynameisalimalikmynameisalimalik"
 
@@ -139,7 +139,7 @@ Router.post("/vote", jsonParser
                 class: req.body.class,
                 description:req.body.description,
                 result:req.body.result,
-                candidates:req.body.candidates,  
+                candidates:req.body.candidates,     
                 by:req.body.email
 
 

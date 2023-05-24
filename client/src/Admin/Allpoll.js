@@ -98,7 +98,7 @@ function Allpoll() {
 <div class="hide1"></div> 
     </div>
       
-    <div class="container1">
+    <div class="container2">
     <div className='row'>
     
     { data1 && data1.map((data3)=>{return(<Card data3={data3} btn={data3._id}/>)})}

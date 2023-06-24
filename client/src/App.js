@@ -23,7 +23,7 @@ function App() {
       <Route path='/vote' element={<Vote/>}/>
       <Route path='/result' element={<Result/>}/>
       <Route path='/login' element={<Login/>}/>
-      <Route path='/signup' element={<Signup/>}/>
+      <Route path='/signup' element={<Signup/>}/> 
       <Route path='/addpoll' element={<Addpoll/>}/>
       <Route path='/prev' element={<Prev/>}/>
       <Route path='/votemid' element={<Votemid/>}/>

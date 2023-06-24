@@ -132,7 +132,7 @@ Router.post("/vote", jsonParser
    
     Router.post("/addpoll", jsonParser
     , async (req, res) => {
-        
+         
             await Vote.create({
 
                 name: req.body.name,
@@ -193,6 +193,17 @@ Router.post("/vote", jsonParser
             
         }
     })
+
+    Router.post('/profiledata',jsonParser,async(req,res)=>{
+        try {
+            const id=req.body.id;
+            const data1=await User.find({"_id":{$in:id}})  
+           res.send(data1)
+        } catch (error) {     
+            console.log(error); 
+        }
+    })
+    
     Router.post('/adminpoll',jsonParser,async(req,res)=>{
         try {
             const data1=await Vote.find({"by":req.body.email})  

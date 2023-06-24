@@ -1,5 +1,5 @@
 const express = require('express');
-const mongo = require('./database/db');
+const mongo = require('./database/db'); 
 mongo() 
 const router=require("./Routes/createuser")
 const display=require("./Routes/display")
@@ -15,7 +15,7 @@ app.use((req,res,next)=>{
   next();
 })
 const server=app.listen(8080, () =>
-  console.log('listening'),
+  console.log('listening'), 
 );
 const io=require('socket.io')(server,{
   pingTimeout:600000,

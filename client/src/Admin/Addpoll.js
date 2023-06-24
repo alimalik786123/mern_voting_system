@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import './Addpoll.css'
 
 function Addpoll() {
-  const [data,setdata]=useState({name:'',class:'',result:'',description:''})
+  const [data,setdata]=useState({name:'',class:'',result:'',description:''}) 
   let redirect=useNavigate()
   const setfun=(e)=>{
       setdata({...data,[e.target.name]:e.target.value})
